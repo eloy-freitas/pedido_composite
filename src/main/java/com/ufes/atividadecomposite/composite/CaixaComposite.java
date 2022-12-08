@@ -47,6 +47,10 @@ public class CaixaComposite  extends Composite{
         this.produtos.add(produto);
     }
     
+    public int getQuantidadeProdutos(){
+        return produtos.size();
+    }
+    
     @Override
     public String getNome() {
         return this.nome;
