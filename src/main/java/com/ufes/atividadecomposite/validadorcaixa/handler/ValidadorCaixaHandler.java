@@ -11,23 +11,20 @@ public abstract class ValidadorCaixaHandler {
     public ValidadorCaixaHandler() {
     }
     
-    public abstract boolean validar(CaixaComposite caixa);
+    public abstract boolean validar(CaixaComposite caixa) throws Exception;
 
     public final void setNext(ValidadorCaixaHandler next) {
         this.next = next;
     }
-    
+
     public final String getErro() {
         return erro;
     }
     
-    public final boolean executar(CaixaComposite caixa){
-        if(validar(caixa) && next != null)
-            next.executar(caixa);
-        else if(next == null)
-            return true;
+    public final boolean executar(CaixaComposite caixa) throws Exception{
+        if(validar(caixa))
+            return next.executar(caixa);
         else
-            throw new RuntimeException(getErro());
-        return false;
+            throw new RuntimeException("Não é possível validar caixa");
     }
 }
