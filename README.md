@@ -11,3 +11,7 @@ Considere que as caixas tenham as seguintes restrições que devem ser verificad
 - Volume máximo (em cm3)
 - Quantidade máxima de itens
 - Tipo de produto (pode conter um determinado tipo de produto ou não pode conter determinado tipo de produto)
+
+## Resolução
+
+![Modelo](img/modelo.png)
