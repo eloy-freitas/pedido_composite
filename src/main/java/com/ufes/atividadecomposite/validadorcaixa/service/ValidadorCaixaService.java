@@ -14,7 +14,7 @@ public class ValidadorCaixaService {
 
     
     public ValidadorCaixaService() {
-        initservices();
+        initServices();
     }
     
     public void addValidador(ValidadorCaixaHandler handler){
@@ -26,7 +26,7 @@ public class ValidadorCaixaService {
         this.proximo = handler;
     }
     
-    private void initservices(){
+    private void initServices(){
         this.addValidador(new ValidadorPesoHandler());
         this.addValidador(new ValidadorQuantidadeItemHandler());
         this.addValidador(new ValidadorVolumeHandler());
