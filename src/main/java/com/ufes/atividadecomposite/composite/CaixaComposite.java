@@ -7,36 +7,38 @@ import java.util.List;
 public class CaixaComposite  extends Composite{
     
     private List<Composite> produtos;
+    private List<String> produtosPermitidos;
     private double limiteVolume;
     private double limitePeso;
     private int limitItens;
     
     public CaixaComposite(
-            String nome, 
-            String tipo, 
-            double limiteVolume,
-            double limitePeso,
-            int limitItens
+        String nome, 
+        String tipo, 
+        double limiteVolume,
+        double limitePeso,
+        int limitItens
     ) {
         super(nome, tipo, 0, 0, limiteVolume);
-        produtos = new ArrayList<>();
+        this.produtos = new ArrayList<>();
+        this.produtosPermitidos = new ArrayList<>();
         this.limiteVolume = limiteVolume;
         this.limitePeso = limitePeso;
-        this.limitItens = limitItens;
-                
+        this.limitItens = limitItens;          
     }
     
-    
     public CaixaComposite(
-            String nome, 
-            String tipo, 
-            double valor, 
-            double limiteVolume,
-            double limitePeso,
-            int limitItens
+        List<String> produtosPermitidos,
+        String nome, 
+        String tipo, 
+        double valor, 
+        double limiteVolume,
+        double limitePeso,
+        int limitItens
     ) {
         super(nome, tipo, valor, limitePeso, limiteVolume);
-        produtos = new ArrayList<>();
+        this.produtos = new ArrayList<>();
+        this.produtosPermitidos = produtosPermitidos;
         this.limiteVolume = limiteVolume;
         this.limitePeso = limitePeso;
         this.limitItens = limitItens;
@@ -44,16 +46,18 @@ public class CaixaComposite  extends Composite{
     }
 
     public CaixaComposite(
-            List<Composite> produtos, 
-            String nome, 
-            String tipo, 
-            double valor,
-            double limiteVolume,
-            double limitePeso,
-            int limitItens
+        List<Composite> produtos, 
+        List<String> produtosPermitidos,
+        String nome, 
+        String tipo, 
+        double valor,
+        double limiteVolume,
+        double limitePeso,
+        int limitItens
     ) {
         super(nome, tipo, valor,limitePeso, limiteVolume);
         this.produtos = produtos;
+        this.produtosPermitidos = produtosPermitidos;
         this.limiteVolume = limiteVolume;
         this.limitePeso = limitePeso;
         this.limitItens = limitItens;
@@ -121,6 +125,10 @@ public class CaixaComposite  extends Composite{
 
     public int getLimitItens() {
         return limitItens;
+    }
+
+    public List<String> getProdutosPermitidos() {
+        return produtosPermitidos;
     }
     
     

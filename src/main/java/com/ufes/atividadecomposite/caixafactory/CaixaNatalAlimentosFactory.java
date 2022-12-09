@@ -2,6 +2,8 @@ package com.ufes.atividadecomposite.caixafactory;
 
 import com.ufes.atividadecomposite.composite.CaixaComposite;
 import com.ufes.atividadecomposite.composite.ProdutoComposite;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CaixaNatalAlimentosFactory implements CaixaFactory{
@@ -11,12 +13,18 @@ public class CaixaNatalAlimentosFactory implements CaixaFactory{
 
     @Override
     public CaixaComposite getCaixa() {
+        List<String> produtoPermitidos = new ArrayList<>();
+        produtoPermitidos.add("Alimento");
+        produtoPermitidos.add("Bebida");
+              
         CaixaComposite caixa = new CaixaComposite(
-            "Caixa de natal", 
-            "Caixa grande", 
-            1000,
-            500,
-            5
+                produtoPermitidos,
+                "Caixa Natal: Alimentoes",
+                "Caixa Média",
+                2,
+                500, 
+                3000,
+                5
         );
         
         caixa.addProduto(new ProdutoComposite(

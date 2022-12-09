@@ -20,6 +20,8 @@ public class AtividadeComposite {
                     70, 100, 
                     20)
         );
+        System.out.println(s.validar(c1));
+        System.out.println(c1.toString());
         
         c1 = new CaixaNatalBrinquedosFactory().getCaixa();
         
