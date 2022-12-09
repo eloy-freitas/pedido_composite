@@ -4,14 +4,14 @@ import com.ufes.atividadecomposite.composite.CaixaComposite;
 
 
 public class ValidadorPesoHandler extends ValidadorCaixaHandler{
-    
-    private final int peso = 2000;
+   
     
     public ValidadorPesoHandler() {
     }
 
     @Override
     public boolean validar(CaixaComposite caixa) throws Exception{
+        double peso = caixa.getLimitePeso();
         if(caixa.getPeso() <= peso)
             return true;
         throw new Exception(

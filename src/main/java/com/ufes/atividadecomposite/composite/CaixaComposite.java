@@ -7,15 +7,23 @@ import java.util.List;
 public class CaixaComposite  extends Composite{
     
     private List<Composite> produtos;
+    private double limiteVolume;
+    private double limitePeso;
+    private int limitItens;
     
     public CaixaComposite(
             String nome, 
             String tipo, 
-            double volume
+            double limiteVolume,
+            double limitePeso,
+            int limitItens
     ) {
-        super(nome, tipo, 0, 0, volume);
+        super(nome, tipo, 0, 0, limiteVolume);
         produtos = new ArrayList<>();
-        
+        this.limiteVolume = limiteVolume;
+        this.limitePeso = limitePeso;
+        this.limitItens = limitItens;
+                
     }
     
     
@@ -23,11 +31,15 @@ public class CaixaComposite  extends Composite{
             String nome, 
             String tipo, 
             double valor, 
-            double peso, 
-            double volume
+            double limiteVolume,
+            double limitePeso,
+            int limitItens
     ) {
-        super(nome, tipo, valor, peso, volume);
+        super(nome, tipo, valor, limitePeso, limiteVolume);
         produtos = new ArrayList<>();
+        this.limiteVolume = limiteVolume;
+        this.limitePeso = limitePeso;
+        this.limitItens = limitItens;
         
     }
 
@@ -36,11 +48,15 @@ public class CaixaComposite  extends Composite{
             String nome, 
             String tipo, 
             double valor,
-            double peso, 
-            double volume
+            double limiteVolume,
+            double limitePeso,
+            int limitItens
     ) {
-        super(nome, tipo, valor, peso, volume);
+        super(nome, tipo, valor,limitePeso, limiteVolume);
         this.produtos = produtos;
+        this.limiteVolume = limiteVolume;
+        this.limitePeso = limitePeso;
+        this.limitItens = limitItens;
     }
     
     public void addProduto(Composite produto){
@@ -90,4 +106,22 @@ public class CaixaComposite  extends Composite{
         
         return total;
     }
+
+    public List<Composite> getProdutos() {
+        return produtos;
+    }
+
+    public double getLimiteVolume() {
+        return limiteVolume;
+    }
+
+    public double getLimitePeso() {
+        return limitePeso;
+    }
+
+    public int getLimitItens() {
+        return limitItens;
+    }
+    
+    
 }

@@ -13,6 +13,7 @@ public class ValidadorVolumeHandler extends ValidadorCaixaHandler{
 
     @Override
     public boolean validar(CaixaComposite caixa) throws Exception{
+        double volume = caixa.getLimiteVolume();
         if(caixa.getVolume() <= volume)
             return true;
         throw new Exception(

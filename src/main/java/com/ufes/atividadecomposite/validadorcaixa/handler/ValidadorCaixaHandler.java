@@ -22,8 +22,11 @@ public abstract class ValidadorCaixaHandler {
     }
     
     public final boolean executar(CaixaComposite caixa) throws Exception{
-        if(validar(caixa))
-            return next.executar(caixa);
+        if(validar(caixa)){
+            if(next != null)
+                return next.executar(caixa);
+            return true;
+        }
         else
             throw new RuntimeException("Não é possível validar caixa");
     }
