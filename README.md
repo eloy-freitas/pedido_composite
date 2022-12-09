@@ -14,4 +14,4 @@ Considere que as caixas tenham as seguintes restrições que devem ser verificad
 
 ## Resolução
 
-![Modelo](img/modelo.png)
+![Modelo Domínio](img/modelo.png)
