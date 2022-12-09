@@ -4,9 +4,6 @@ import com.ufes.atividadecomposite.composite.CaixaComposite;
 
 
 public class ValidadorVolumeHandler extends ValidadorCaixaHandler{
-    
-    private final double volume = 1000;
-    
     public ValidadorVolumeHandler() {
 
     }

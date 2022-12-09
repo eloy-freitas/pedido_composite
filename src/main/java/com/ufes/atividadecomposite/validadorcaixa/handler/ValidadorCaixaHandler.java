@@ -4,27 +4,22 @@ import com.ufes.atividadecomposite.composite.CaixaComposite;
 
 
 public abstract class ValidadorCaixaHandler {
-    private ValidadorCaixaHandler next;
-    private String erro;
+    private ValidadorCaixaHandler proximo;
     
-
     public ValidadorCaixaHandler() {
     }
     
     public abstract boolean validar(CaixaComposite caixa) throws Exception;
 
-    public final void setNext(ValidadorCaixaHandler next) {
-        this.next = next;
+    public final void setNext(ValidadorCaixaHandler proximo) {
+        this.proximo = proximo;
     }
 
-    public final String getErro() {
-        return erro;
-    }
     
     public final boolean executar(CaixaComposite caixa) throws Exception{
         if(validar(caixa)){
-            if(next != null)
-                return next.executar(caixa);
+            if(proximo != null)
+                return proximo.executar(caixa);
             return true;
         }
         else
