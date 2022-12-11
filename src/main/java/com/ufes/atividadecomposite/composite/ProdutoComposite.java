@@ -1,10 +1,12 @@
 package com.ufes.atividadecomposite.composite;
 
+import com.ufes.atividadecomposite.model.Tipo;
+
 public class ProdutoComposite extends Composite{
 
     public ProdutoComposite(
         String nome, 
-        String tipo, 
+        Tipo tipo, 
         double valor, 
         double peso, 
         double volume
@@ -15,11 +17,6 @@ public class ProdutoComposite extends Composite{
     @Override
     public String getNome() {
         return nome;
-    }
-
-    @Override
-    public String getTipo() {
-        return tipo;
     }
 
     @Override
@@ -37,7 +34,9 @@ public class ProdutoComposite extends Composite{
         return volume;
     }
 
-    
-    
-    
+    @Override
+    public Tipo getTipo() {
+        return tipo;
+    }
+
 }

@@ -4,6 +4,7 @@ import com.ufes.atividadecomposite.composite.CaixaComposite;
 import com.ufes.atividadecomposite.composite.ProdutoComposite;
 import java.util.ArrayList;
 import java.util.List;
+import com.ufes.atividadecomposite.model.Tipo;
 
 
 public class CaixaNatalBrinquedosFactory implements CaixaFactory{
@@ -13,13 +14,14 @@ public class CaixaNatalBrinquedosFactory implements CaixaFactory{
 
     @Override
     public CaixaComposite getCaixa() {
-        List<String> produtoPermitidos = new ArrayList<>();
-        produtoPermitidos.add("Brinquedo");
+        
+        List<Tipo> produtoPermitidos = new ArrayList<>();
+        produtoPermitidos.add(Tipo.ALIMENTO);
               
         CaixaComposite caixa = new CaixaComposite(
                 produtoPermitidos,
                 "Caixa de natal: brinquedos", 
-                "Caixa grande", 
+                Tipo.CAIXA_GRANDE, 
                 2,
                 500, 
                 3000,
@@ -28,21 +30,21 @@ public class CaixaNatalBrinquedosFactory implements CaixaFactory{
         
         caixa.addProduto(new ProdutoComposite(
                 "Carrinho de controle remoto", 
-                "Brinquedo",
+                Tipo.BRINQUEDO,
                 100,
                 30,
                 20
         ));
         caixa.addProduto(new ProdutoComposite(
                 "Boneco de ação", 
-                "Brinquedo",
+                Tipo.BRINQUEDO,
                 150,
                 25,
                 30
         ));
         caixa.addProduto(new ProdutoComposite(
                 "Quebra cabeça", 
-                "Brinquedo",
+                Tipo.BRINQUEDO,
                 80,
                 10,
                 15

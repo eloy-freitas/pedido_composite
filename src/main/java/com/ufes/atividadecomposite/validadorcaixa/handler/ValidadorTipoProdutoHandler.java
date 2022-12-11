@@ -19,7 +19,7 @@ public class ValidadorTipoProdutoHandler  extends ValidadorCaixaHandler{
                 throw new Exception(
                 ""
                     .concat("\nProdutos do tipo: ")
-                    .concat(p.getTipo())
+                    .concat(p.getTipo().toString())
                     .concat("\nNão são permitidos nessa caixa")
                 );
             }

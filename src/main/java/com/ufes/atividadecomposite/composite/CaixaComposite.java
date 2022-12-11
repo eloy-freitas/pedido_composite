@@ -1,5 +1,6 @@
 package com.ufes.atividadecomposite.composite;
 
+import com.ufes.atividadecomposite.model.Tipo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,14 +8,14 @@ import java.util.List;
 public class CaixaComposite  extends Composite{
     
     private List<Composite> produtos;
-    private List<String> produtosPermitidos;
+    private List<Tipo> produtosPermitidos;
     private double limiteVolume;
     private double limitePeso;
     private int limitItens;
     
     public CaixaComposite(
         String nome, 
-        String tipo, 
+        Tipo tipo, 
         double limiteVolume,
         double limitePeso,
         int limitItens
@@ -28,9 +29,9 @@ public class CaixaComposite  extends Composite{
     }
     
     public CaixaComposite(
-        List<String> produtosPermitidos,
+        List<Tipo> produtosPermitidos,
         String nome, 
-        String tipo, 
+        Tipo tipo, 
         double valor, 
         double limiteVolume,
         double limitePeso,
@@ -47,9 +48,9 @@ public class CaixaComposite  extends Composite{
 
     public CaixaComposite(
         List<Composite> produtos, 
-        List<String> produtosPermitidos,
+        List<Tipo> produtosPermitidos,
         String nome, 
-        String tipo, 
+        Tipo tipo, 
         double valor,
         double limiteVolume,
         double limitePeso,
@@ -77,7 +78,7 @@ public class CaixaComposite  extends Composite{
     }
 
     @Override
-    public String getTipo() {
+    public Tipo getTipo() {
         return this.tipo;
     }
 
@@ -127,7 +128,7 @@ public class CaixaComposite  extends Composite{
         return limitItens;
     }
 
-    public List<String> getProdutosPermitidos() {
+    public List<Tipo> getProdutosPermitidos() {
         return produtosPermitidos;
     }
     

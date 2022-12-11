@@ -1,14 +1,16 @@
 package com.ufes.atividadecomposite.composite;
 
+import com.ufes.atividadecomposite.model.Tipo;
+
 
 public abstract class Composite {
     protected String nome;
-    protected String tipo;
+    protected Tipo tipo;
     protected double valor;
     protected double peso;
     protected double volume;
 
-    public Composite(String nome, String tipo, double valor, double peso, double volume) {
+    public Composite(String nome, Tipo tipo, double valor, double peso, double volume) {
         this.nome = nome;
         this.tipo = tipo;
         this.valor = valor;
@@ -18,7 +20,7 @@ public abstract class Composite {
     
     public abstract String getNome();
 
-    public abstract String getTipo();
+    public abstract Tipo getTipo();
 
     public abstract double getValor();
 
